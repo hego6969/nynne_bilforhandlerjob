@@ -1,9 +1,9 @@
 
 
-I configen kan du 
-sætte dit webhook ind ,
-ændre den procent del af salget sælgeren skal modtage.
-tilføje en bilforhandler mere.
+ - I configen kan du 
+ - sætte dit webhook ind ,
+ - ændre den procent del af salget sælgeren skal modtage.
+ - tilføje en bilforhandler mere.
 
 
 
