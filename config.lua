@@ -17,7 +17,8 @@ Config.cardealer = {
         spawntestveh = { 
             pos = vec3( -23.589,-1094.532, 26.895),        -- spawn coords
             heading = 340.197,                           -- valgfri heading
-            deleteTime = 300000 -- tiden i millisekunder (her 5 min)
+            deleteTime = 300000 --  prøv køretøj bliver slettet efter 5 min
         }
     },
+
 }
