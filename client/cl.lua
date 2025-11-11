@@ -1,4 +1,3 @@
--- Opret target zone for bilforhandler
 for k,v in pairs(Config.cardealer) do
     exports.ox_target:addBoxZone({
         coords = v.menuPos, -- menu åbnes her
@@ -18,7 +17,7 @@ for k,v in pairs(Config.cardealer) do
     })
 end
 
--- Registrer menu
+
 lib.registerContext({
   id = 'cardealermenu-by-nyn',
   title = 'Bilforhandler Menu',
@@ -47,9 +46,9 @@ AddEventHandler('opencardealermenu',function()
     lib.showContext('cardealermenu-by-nyn')
 end)
 
--- Salgs menu
+
 function Sellcarmenu()
-    local input = lib.inputDialog("🚗 Sælg bil", {
+    local input = lib.inputDialog("Sælg bil", {
         {type = "number", label = "Købers ID", placeholder = "fx 12"},
         {type = "input", label = "Bilens model", placeholder = "adder"},
         {type = "number", label = "Pris", placeholder = "100000"},
@@ -73,7 +72,7 @@ end
 -- Køber får tilbud
 RegisterNetEvent("bilforhandler:tilbud", function(sellerSource, bilModel, pris, veh_type)
     local alert = lib.alertDialog({
-        header = "🚗 Køb af bil",
+        header = "Køb af bil",
         content = ("Sælger (ID: %s) tilbyder dig en %s for %s DKK\nVil du acceptere?"):format(sellerSource, bilModel, pris),
         centered = true,
         cancel = true,
@@ -105,7 +104,7 @@ end)
 -- Test kørsel menu
 -- Test kørsel menu
 function TestSpawnMenu()
-    local input = lib.inputDialog("🚗 Spawn testbil", {
+    local input = lib.inputDialog("Spawn testbil", {
         {type = "input", label = "Bilens model", placeholder = "adder"}
     })
 
@@ -151,7 +150,7 @@ end)
 
 
 
-RegisterCommand("getcoords", function()
+RegisterCommand("coords", function()
     local ped = PlayerPedId()
     local pos = GetEntityCoords(ped)
     local heading = GetEntityHeading(ped)
@@ -162,3 +161,4 @@ RegisterCommand("getcoords", function()
         args = {"COORDS", (" %.3f,  %.3f,  %.3f, Heading: %.3f"):format(pos.x, pos.y, pos.z, heading)}
     })
 end, false)
+
