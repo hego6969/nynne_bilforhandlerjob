@@ -13,7 +13,7 @@ local function sendWebhook(msg)
     PerformHttpRequest(webhookURL, function() end, "POST", json.encode({
         username = "Bilforhandler Log",
         embeds = {{
-            title = "🚗 Bilhandel",
+            title = "Bilhandel",
             description = msg,
             color = 16753920
         }}
@@ -38,7 +38,7 @@ AddEventHandler("bilforhandler:sælgbil", function(targetId, bilModel, pris, veh
     TriggerClientEvent("bilforhandler:tilbud", targetId, sellerSource, bilModel, pris, veh_type)
 end)
 
--- Køber accepterer
+
 RegisterServerEvent("bilforhandler:accepterKøb")
 AddEventHandler("bilforhandler:accepterKøb", function(sellerSource, bilModel, pris, veh_type)
     local buyerSource = source
@@ -95,7 +95,7 @@ AddEventHandler("bilforhandler:accepterKøb", function(sellerSource, bilModel, p
     end
 end)
 
--- Køber afviser
+
 RegisterServerEvent("bilforhandler:afvisKøb")
 AddEventHandler("bilforhandler:afvisKøb", function(sellerSource, bilModel, pris)
     TriggerClientEvent("ox_lib:notify", sellerSource, {
@@ -115,4 +115,5 @@ AddEventHandler('nynne_bilforhandler:checkPerms', function()
             TriggerClientEvent("pNotify:SendNotification", source,{text = "Du har ikke adgang.", type = "error", queue = "global", timeout = 12000, layout = "centerRight",animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"},killer = true})
         end
     end
+
 end)
